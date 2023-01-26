@@ -1,24 +1,19 @@
-
-export class AnekdotApi {
+export class ServiceApi {
     constructor() {
     }
 
-    get(){
-        return fetch("http://www.RzhuNeMogu.ru/Widzh/WidzhRNM.aspx?type=1").then((res)=>res.json())
-    }
-
-    static async getAnekdot() {
+    static async getRandomDog() {
         return fetch("https://random.dog/woof.json"
         )
-            .then(res=> res.json())
+            .then(res => res.json())
             .then(response => response.url)
 
     }
 
-    static  async getCat (){
-        return fetch("https://random.dog/woof.json"
+    static async getRandomCat() {
+        return fetch("https://aws.random.cat/meow"
         )
-            .then(res=> res.json())
-            .then(response => response.url)
+            .then(res => res.json())
+            .then(response => response.file)
     }
 }
